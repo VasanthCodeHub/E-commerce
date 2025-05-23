@@ -58,7 +58,8 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.banner} >
     
        <Slider/>
-       <HomeSlider/>
+       <HomeSlider/> 
+       
        <Text style = {styles.collectionText}>Our Collection</Text>
        <HomeSliderTwo/>
      

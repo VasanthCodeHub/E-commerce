@@ -6,9 +6,11 @@ const IMAGES = {
   USER: require("../../assets/images/user.png"),
   SEARCH: require("../../assets/images/search.png"),
   SHOP: require("../../assets/images/shop.png"),
+  ADMIN: require("../../assets/images/admin.png"),
   LOGOUT: require("../../assets/images/logout.png"),
   USERPROFLIE: require('../../assets/images/5.png'),
   GOOGLE: require('../../assets/images/google.png'),
+  NOTIFICATION: require('../../assets/images/notification.png'),
 
 
   //categories images 

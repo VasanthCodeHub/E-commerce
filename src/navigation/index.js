@@ -15,6 +15,9 @@ import FavouriteScreen from '../screens/tabs/Fav';
 import ShopScreen from '../screens/tabs/Shop';
 import UserScreen from '../screens/tabs/Profile';
 
+import AdminScreen from '../screens/tabs/admin';
+
+
 import SCREENS from '../screens';
 import IMAGES from '../assets/images';
 import COLORS from '../constants/colors'; 
@@ -80,14 +83,14 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name={SCREENS.SHOP}
-        component={ShopScreen}
+        name={SCREENS.ADMIN}
+        component={AdminScreen}
         options={{
-          title: 'Shop',
+          title: 'Admin',
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <Image
-              source={IMAGES.SHOP}
+              source={IMAGES.ADMIN}
               style={{
                 height: 30,
                 width: 30,
@@ -115,6 +118,7 @@ const TabNavigator = () => {
           ),
         }}
       />
+      
     </Tab.Navigator>
   );
 };
@@ -125,14 +129,17 @@ const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {/* This is now the entry point to the tabs */}
+      <Stack.Screen name={SCREENS.MAIN_TABS} component={TabNavigator} />
       <Stack.Screen name={SCREENS.LOGIN} component={LoginScreen} />
       <Stack.Screen name={SCREENS.SIGNUP} component={SignupScreen} />
       <Stack.Screen name={SCREENS.FORGETPASSWORD} component={ForgetScreen} />
       <Stack.Screen name={SCREENS.VERIFICATION} component={VerificationScreen} />
       <Stack.Screen name={SCREENS.NEWPASSWORD} component={PasswordResetScreen} />
+      <Stack.Screen name={SCREENS.ADMIN} component={AdminScreen} />
+      <Stack.Screen name={SCREENS.FAVOURITE} component={FavouriteScreen} />
 
-      {/* This is now the entry point to the tabs */}
-      <Stack.Screen name={SCREENS.MAIN_TABS} component={TabNavigator} />
+      
     </Stack.Navigator>
   );
 };

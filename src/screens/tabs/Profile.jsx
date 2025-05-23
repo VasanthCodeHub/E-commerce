@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Alert, 
   ActivityIndicator,
-
 }
 from "react-native";
 import IMAGES from "../../assets/images";
@@ -71,7 +70,7 @@ const UserScreen = ({ navigation }) => {
             }>
                 <Image style={styles.logoutIcon} source={IMAGES.LOGOUT} />
             </TouchableOpacity>
-    
+            
           </View>
 
      </View>

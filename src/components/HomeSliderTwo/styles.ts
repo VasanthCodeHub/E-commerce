@@ -1,3 +1,4 @@
+// src/components/styles.ts
 import { StyleSheet, Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
 
@@ -17,10 +18,10 @@ export const styles = StyleSheet.create({
   imageRow: {
     flexDirection: "row",
     marginBottom: 12,
-    height: 170, // Fixed height for the row
+    height: 170,
   },
   mainImage: {
-    width: width * 0.55, // Takes 55% of screen width
+    width: width * 0.55,
     height: "100%",
     borderRadius: 10,
     marginRight: 8,
@@ -32,12 +33,11 @@ export const styles = StyleSheet.create({
   },
   sideImage: {
     width: "100%",
-    height: "48%", // Slightly less than half to account for space-between
+    height: "48%",
     borderRadius: 10,
     backgroundColor: "#f5f5f5",
     justifyContent: "center",
     alignItems: "center",
-    resizeMode: "cover",
     overflow: "hidden",
   },
   plusText: {

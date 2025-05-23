@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { View, FlatList, Dimensions } from "react-native";
 import SliderItem from "./SliderItem";
-import { useSliderData, SliderImageType } from "../data/useSliderData";
+import { useSliderData } from "../data/useSliderData";
 
 const { width } = Dimensions.get("window");
 

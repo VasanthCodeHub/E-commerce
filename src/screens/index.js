@@ -11,6 +11,7 @@ const SCREENS = {
   FAVOURITE: 'FavouriteScreen',
   SHOP: 'ShopScreen',
   PROFILE: 'ProfileScreen',
+  ADMIN: 'AdminScreen',
 
   // Wrapper for Tabs
   MAIN_TABS: 'MainTabs',
