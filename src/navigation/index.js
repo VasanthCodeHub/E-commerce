@@ -12,10 +12,15 @@ import PasswordResetScreen from '../screens/authScreen/NewPasswordScreen';
 import HomeScreen from '../screens/tabs/Home';
 import SearchScreen from '../screens/tabs/Search';
 import FavouriteScreen from '../screens/tabs/Fav';
-import ShopScreen from '../screens/tabs/Shop';
 import UserScreen from '../screens/tabs/Profile';
 
 import AdminScreen from '../screens/tabs/admin';
+
+
+
+import DeliveryAddressScreen from '../screens/DeliveryAddress/index';
+import AddDeliveryAddressScreen from '../screens/DeliveryAddress/addLocation';
+
 
 
 import SCREENS from '../screens';
@@ -129,8 +134,10 @@ const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* This is now the entry point to the tabs */}
+      
+       {/* This is now the entry point to the tabs */}
       <Stack.Screen name={SCREENS.MAIN_TABS} component={TabNavigator} />
+
       <Stack.Screen name={SCREENS.LOGIN} component={LoginScreen} />
       <Stack.Screen name={SCREENS.SIGNUP} component={SignupScreen} />
       <Stack.Screen name={SCREENS.FORGETPASSWORD} component={ForgetScreen} />
@@ -138,7 +145,9 @@ const StackNavigator = () => {
       <Stack.Screen name={SCREENS.NEWPASSWORD} component={PasswordResetScreen} />
       <Stack.Screen name={SCREENS.ADMIN} component={AdminScreen} />
       <Stack.Screen name={SCREENS.FAVOURITE} component={FavouriteScreen} />
-
+      
+      <Stack.Screen name={SCREENS.DELIVERY_ADDRESS} component={DeliveryAddressScreen} />
+      <Stack.Screen name={SCREENS.ADD_ADDRESS} component={AddDeliveryAddressScreen} />
       
     </Stack.Navigator>
   );

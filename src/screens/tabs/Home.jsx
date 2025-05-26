@@ -26,6 +26,7 @@ const categories = [
 ];
 
 const HomeScreen = ({ navigation }) => {
+ 
   const renderCategoryItem = ({ item }) => (
     <TouchableOpacity style={styles.storyItem}>
       <Image source={item.image} style={styles.storyImage} />
@@ -45,7 +46,7 @@ const HomeScreen = ({ navigation }) => {
   <Image style={styles.searchIcon} source={IMAGES.SEARCH} />
 </View>
 
-      <ScrollView>
+      <ScrollView >
 
         <FlatList
           data={categories}
@@ -59,15 +60,15 @@ const HomeScreen = ({ navigation }) => {
     
        <Slider/>
        <HomeSlider/> 
-       
+     
        <Text style = {styles.collectionText}>Our Collection</Text>
        <HomeSliderTwo/>
-     
        
      </View>
 
       </ScrollView>
 
+     
     </View>
   );
 };
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
   storyImage: {
     width: 70,
     height: 70,
-    borderRadius: 35, // Rounded image
+    borderRadius: 35, 
     borderWidth: 2,
     borderColor: '#ccc',
   },

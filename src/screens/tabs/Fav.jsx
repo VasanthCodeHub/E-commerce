@@ -3,6 +3,7 @@ import React from "react";
 import { View, FlatList, Text, Image, StyleSheet } from "react-native";
 import { useWishlist } from "../../context/WishlistContext";
 
+
 const FavouriteScreen = () => {
   const { wishlist } = useWishlist();
 
@@ -11,17 +12,18 @@ const FavouriteScreen = () => {
       <View style={styles.center}>
         <Text>Your wishlist is empty.</Text>
       </View>
+      
     );
   }
 
   return (
+    
+        
     <FlatList
       data={wishlist}
       keyExtractor={(item) => item.id}
       contentContainerStyle={{ padding: 16 }}
       renderItem={({ item }) => (
-
-       
         <View style={styles.card}>
           <Image source={{ uri: item.images[0] }} style={styles.image} />
           <View style={styles.info}>
@@ -29,11 +31,15 @@ const FavouriteScreen = () => {
             <Text style={styles.brand}>{item.brand}</Text>
             <Text style={styles.price}>{item.price}</Text>
           </View>
+           
         </View>
-       
+      
       )}
     />
+  
+    
   );
+  
 };
 
 const styles = StyleSheet.create({

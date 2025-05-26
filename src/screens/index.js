@@ -15,6 +15,11 @@ const SCREENS = {
 
   // Wrapper for Tabs
   MAIN_TABS: 'MainTabs',
+
+
+
+  DELIVERY_ADDRESS: "DeliveryAddressScreen",
+  ADD_ADDRESS : "AddAddressScreen",
 };
 
 export default SCREENS;

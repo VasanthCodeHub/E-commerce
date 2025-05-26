@@ -7,20 +7,24 @@ const { width } = Dimensions.get("window");
 
 const Slider = () => {
   const flatListRef = useRef<FlatList>(null);
+  const currentIndexRef = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { images, loading } = useSliderData();
 
   useEffect(() => {
     if (images.length === 0) return;
+
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % images.length;
+      const nextIndex = (currentIndexRef.current + 1) % images.length;
       flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      setCurrentIndex(nextIndex);
-    }, 3000); 
-    return () => clearInterval(interval); 
-     
-  }, [currentIndex]);
-    if (loading) return null;
+      currentIndexRef.current = nextIndex;
+      setCurrentIndex(nextIndex); 
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images]);
+
+  if (loading) return null;
 
   return (
     <View>
@@ -37,6 +41,13 @@ const Slider = () => {
           offset: width * index,
           index,
         })}
+        onMomentumScrollEnd={(event) => {
+          const newIndex = Math.round(
+            event.nativeEvent.contentOffset.x / width
+          );
+          currentIndexRef.current = newIndex;
+          setCurrentIndex(newIndex);
+        }}
       />
     </View>
   );

@@ -11,16 +11,22 @@ const CategoryCard = ({ item }: Props) => {
 
   return (
     <View style={styles.card}>
+      
+
       <View style={styles.imageRow}>
-        <Image source={{ uri: item.images[0] }} style={styles.mainImage} />
-        <View style={styles.sideImages}>
-          <Image source={{ uri: item.images[1] }} style={styles.sideImage} />
-          <Image source={{ uri: item.images[2] }} style={styles.sideImage} />
-          {/*<View style={styles.sideImage}>
-            <Text style={styles.plusText}>+{item.images.length - 1}</Text>
-          </View>*/}
-        </View>
-      </View>
+  {item.images?.[0] ? (
+    <Image source={{ uri: item.images[0] }} style={styles.mainImage} />
+  ) : null}
+
+  <View style={styles.sideImages}>
+    {item.images?.[1] ? (
+      <Image source={{ uri: item.images[1] }} style={styles.sideImage} />
+    ) : null}
+    {item.images?.[2] ? (
+      <Image source={{ uri: item.images[2] }} style={styles.sideImage} />
+    ) : null}
+  </View>
+</View>
 
       <Text style={styles.name}>{item.name || "Category"}</Text>
       <Text style={styles.brand}>{item.brand || "Brand Name"}</Text>
@@ -41,6 +47,7 @@ const CategoryCard = ({ item }: Props) => {
           <Text style={styles.addToBagText}>Add to Bag</Text>
         </TouchableOpacity>
       </View>
+      
     </View>
   );
 };

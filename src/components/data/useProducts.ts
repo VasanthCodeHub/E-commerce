@@ -23,7 +23,7 @@ export const useProducts = () => {
             price: `Rs. ${data.offerCost}`,
             originalPrice: `Rs. ${data.originalCost}`,
             discount: `${data.offerPercentage}% Off`,
-            images: data.images, // Array of URLs
+            images: data.imageUrls || [],
           };
         });
 
