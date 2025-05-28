@@ -1,4 +1,3 @@
-// src/components/HomeSliderTwo.tsx
 import React from "react";
 import { View, FlatList, ActivityIndicator, Text } from "react-native";
 import CategoryCard from "./CategoryCard";

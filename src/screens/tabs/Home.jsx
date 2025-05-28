@@ -13,7 +13,6 @@ import Slider from "../../components/Slider";
 import HomeSlider from "../../components/HomeSlider";
 import HomeSliderTwo from "../../components/HomeSliderTwo";
 
-
 const categories = [
   { id: '1', name: 'Categories', image: require('../../assets/images/categories.png') },
   { id: '2', name: 'Mens', image: require('../../assets/images/1.png') },
@@ -24,7 +23,7 @@ const categories = [
   { id: '7', name: 'Habibbi', image: require('../../assets/images/6.png') },
   { id: '8', name: 'Gen-z', image: require('../../assets/images/7.png') },
 ];
-
+ 
 const HomeScreen = ({ navigation }) => {
  
   const renderCategoryItem = ({ item }) => (
@@ -67,7 +66,6 @@ const HomeScreen = ({ navigation }) => {
      </View>
 
       </ScrollView>
-
      
     </View>
   );
